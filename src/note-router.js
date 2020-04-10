@@ -49,10 +49,9 @@ notesRouter
   .route('/:id')
   .get((req, res, next) => {
     const { id } = req.params;
-    const db = req.app.get('db');
-
+    
     NotesService
-      .getById(db, id)
+      .getById(req.app.get('db'), id)
       .then((note) => {
         if (note) {
           return res.status(200).json(note);
