@@ -23,11 +23,10 @@ app.use('/notes', notesRouter);
 
 // request handling
 app.get('/', (req, res) => {
-  res.status(200).send('Hello, world!');
+  res.status(200).send('this is the server!');
 });
 
 // error handling
-// eslint-disable-next-line no-unused-vars
 const errorHandler = (error, req, res, next) => {
   let response;
   console.log(error.message);
@@ -42,5 +41,4 @@ const errorHandler = (error, req, res, next) => {
 
 app.use(errorHandler);
 
-// the bottom line, literally
 module.exports = app;
